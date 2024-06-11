@@ -1,7 +1,7 @@
 // server.js
 const express = require('express');
 const path = require('path');
-// const cors = require('cors');
+const cors = require('cors');
 
 
 require('dotenv').config()
@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express();
 const PORT = process.env.PORT || 5060;
 
-// app.use(cors({origin:true,credentials:false}));
+app.use(cors({origin:true,credentials:false}));
 // Serve static files from the "data" directory
 app.use('/api/v1/data', express.static(path.join(__dirname, 'data')));
 
